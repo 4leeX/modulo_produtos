@@ -22,9 +22,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $produtos = $this->produto->all();
+        $produtos = $this->produto
+            ->orderBy('id', 'DESC')->paginate(5);
 
-        return view('produtos.index', $produtos);
+        return view('produtos.index', compact('produtos'));
     }
 
     /**
@@ -61,7 +62,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $produtos = $this->produto->findOrFail($id);
+        $produtos = $this->produto->find($id);
 
         return view('produtos.show', compact('produtos'));
     }
@@ -74,9 +75,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $produtos = $this->produto->all();
+        $produtos = $this->produto->find($id);
 
-        return view('produtos.show', compact('produtos'));
+        return view('produtos.edit', compact('produtos'));
     }
 
     /**
@@ -88,12 +89,15 @@ class ProductController extends Controller
      */
     public function update(StoreUpdateProductRequest $request, $id)
     {
-        if (!$produtos = $this->produto->update($request->all($id)))
-            return redirect()->route('produtos.edit')
+        if (!$produtos = $this->produto->find($id)) {
+            return redirect()->back()
                 ->withErrors('Erro ao editar o produto');
+        }
+
+        $produtos->update($request->all());
 
         return redirect()->route('produtos.index')
-            ->withSuccess('Produto editado com sucesso!');
+            ->withSuccess("Produto {$produtos->nome} editado com sucesso!");
     }
 
     /**
@@ -104,7 +108,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $produtos = $this->produto->findById($id);
+        $produtos = $this->produto->find($id);
 
         $produtos->delete();
 
