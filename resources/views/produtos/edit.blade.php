@@ -59,10 +59,11 @@
             </div>
 
             <div class="col-lg-12" style="margin-top: 20px;">
-                <a type="button" class="btn btn-danger" style="margin-right: 15px" href="{{ route('produtos.index') }}">
+                <a type="button" class="btn btn-danger btn-sm" style="margin-right: 15px"
+                    href="{{ route('produtos.index') }}">
                     Cancelar
                 </a>
-                <button type="submit" class="btn btn-success">
+                <button type="submit" class="btn btn-success btn-sm">
                     Salvar
                 </button>
             </div>

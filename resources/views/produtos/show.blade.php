@@ -5,8 +5,8 @@
     <div class="container">
         <div>
             <h2>Produto: {{ $produtos->nome }}</h2>
-            <div class="col-lg-12" style="text-align: right; margin-bottom: 15px">
-                <a type="button" class="btn btn-primary" href="{{ route('produtos.index') }}">Voltar</a>
+            <div class="col-lg-12" style="text-align: left; margin-bottom: 15px">
+                <a type="button" class="btn btn-primary btn-sm" href="{{ route('produtos.index') }}">Voltar</a>
             </div>
 
             <div class="card border-light mb-3" style="max-width: 100%;">
@@ -14,7 +14,7 @@
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 20px">
                     <div class="col-lg-12" style="text-align: left; margin-top: 10px; padding-left: 20px">
-                        <a type="button" class="btn btn-primary"
+                        <a type="button" class="btn btn-primary btn-sm"
                             href="{{ route('produtos.edit', $produtos->id) }}">Editar</a>
                     </div>
 
@@ -22,7 +22,7 @@
                         <form action="{{ route('produtos.destroy', $produtos->id) }}" method="POST">
                             @method('DELETE')
                             @csrf
-                            <button type="submit" class="btn btn-outline-danger btn-sm"
+                            <button type="submit" class="btn btn-dark btn-sm"
                                 onclick="return confirm('Tem certeza que deseja deletar esse produto? ')"
                                 style="float: right;">
                                 Deletar
@@ -34,12 +34,12 @@
                 <div class="card-body col-xs-8 col-xs-offset-2">
                     <div class="row">
                         <div class="card-body">
-                            <h4>{{ $produtos->nome }}</h4>
-                            <h4>{{ $produtos->valor }}</h4>
-                            <h4>{{ $produtos->cod_barras }}</h4>
-                            <h4>{{ $produtos->icms }}</h4>
-                            <h4>{{ $produtos->ipi }}</h4>
-                            <h4>{{ $produtos->descricao }}</h4>
+                            <h4><strong class="text-primary">Nome:</strong> {{ $produtos->nome }}</h4>
+                            <h4><strong class="text-primary">R$</strong> {{ $produtos->valor }}</h4>
+                            <h4><strong class="text-primary">Codigo de barras:</strong> {{ $produtos->cod_barras }}</h4>
+                            <h4><strong class="text-primary">ICMS:</strong> {{ $produtos->icms }}</h4>
+                            <h4><strong class="text-primary">IPI:</strong> {{ $produtos->ipi }}</h4>
+                            <h4><strong class="text-primary">Descrição:</strong> {{ $produtos->descricao }}</h4>
                         </div>
                     </div>
                 </div>
