@@ -5314,10 +5314,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -28556,36 +28552,41 @@ var render = function () {
       _c("table", { staticClass: "table table-hover" }, [
         _vm._m(1),
         _vm._v(" "),
-        _c(
-          "tbody",
-          _vm._l(_vm.produtos.data, function (produto, index) {
-            return _c("tr", { key: index }, [
-              _c("th", { attrs: { scope: "row" } }, [
-                _vm._v(_vm._s(produto.id)),
-              ]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(produto.nome))]),
-              _vm._v(" "),
-              _c("td", [_vm._v("R$ " + _vm._s(produto.valor))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(produto.icms))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(produto.ipi))]),
-              _vm._v(" "),
-              _c("td", [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-outline-info btn-sm",
-                    attrs: { href: "/produtos/" + produto.id, type: "button" },
-                  },
-                  [_vm._v("\n            ver mais\n          ")]
-                ),
-              ]),
-            ])
-          }),
-          0
-        ),
+        this.produtos
+          ? _c(
+              "tbody",
+              _vm._l(_vm.produtos.data, function (produto, index) {
+                return _c("tr", { key: index }, [
+                  _c("th", { attrs: { scope: "row" } }, [
+                    _vm._v(_vm._s(produto.id)),
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(produto.nome))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("R$ " + _vm._s(produto.valor))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(produto.icms))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(produto.ipi))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-outline-info btn-sm",
+                        attrs: {
+                          href: "/produtos/" + produto.id,
+                          type: "button",
+                        },
+                      },
+                      [_vm._v("\n            ver mais\n          ")]
+                    ),
+                  ]),
+                ])
+              }),
+              0
+            )
+          : _vm._e(),
       ]),
       _vm._v(" "),
       _c("pagination", {

@@ -22,32 +22,29 @@
 
             <div class="form-group mb-2">
                 <label>Nome do Produto:</label>
-                <input name="nome" id="nome" type="text" class="form-control" placeholder="Carro"
-                    value="{{ $produtos->nome }}">
+                <input name="nome" id="nome" type="text" class="form-control" value="{{ $produtos->nome }}">
             </div>
 
             <div class="form-group mb-2">
                 <label>Valor:</label>
-                <input name="valor" id="valor" type="number" class="form-control" placeholder="51.50" min="0" step="0.50"
-                    max="500" value="{{ $produtos->valor }}">
+                <input name="valor" id="valor" type="number" class="form-control" min="0" step="0.50" max="500"
+                    value="{{ $produtos->valor }}">
             </div>
 
             <div class="form-group mb-2">
                 <label>Código de barras:</label>
-                <input name="cod_barras" id="cod_barras" type="text" class="form-control" placeholder="ccc-dda-dsa-124"
+                <input name="cod_barras" id="cod_barras" type="text" class="form-control"
                     value="{{ $produtos->cod_barras }}">
             </div>
 
             <div class="form-group mb-2">
                 <label>ICMS:</label>
-                <input name="icms" id="icms" type="text" class="form-control" placeholder="ccc-dda-dsa-124"
-                    value="{{ $produtos->icms }}">
+                <input name="icms" id="icms" type="text" class="form-control" value="{{ $produtos->icms }}">
             </div>
 
             <div class="form-group mb-2">
                 <label>IPI:</label>
-                <input name="ipi" id="ipi" type="text" class="form-control" placeholder="ccc-dda-dsa-124"
-                    value="{{ $produtos->ipi }}">
+                <input name="ipi" id="ipi" type="text" class="form-control" value="{{ $produtos->ipi }}">
             </div>
 
             <div class="form-group">

@@ -4,10 +4,6 @@
       <h2>Lorem ipsum dolor sit amet</h2>
       <hr />
 
-      <!-- @if (session('success'))
-      <div class="alert alert-success">{{ session("success") }}</div>
-      @endif -->
-
       <p>
         The following is
         <strong
@@ -45,7 +41,7 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody v-if="this.produtos">
         <tr v-for="(produto, index) in produtos.data" :key="index">
           <th scope="row">{{ produto.id }}</th>
           <td>{{ produto.nome }}</td>

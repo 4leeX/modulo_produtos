@@ -29,7 +29,20 @@ class StoreUpdateProductRequest extends FormRequest
             'cod_barras' => ['required', 'string'],
             'icms' => ['required', 'string'],
             'ipi' => ['required', 'string'],
-            'descricao' => ['required', 'nullable', 'string'],
+            'descricao' => ['nullable', 'string'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'nome.required' => 'Nome é obrigatório',
+            'nome.min' => 'Nome tem que possuir no mínimo 4 caracteres',
+            'nome.max' => 'Nome tem que possuir no máximo 36 caracteres',
+            'valor.required' => 'Valor é obrigatório',
+            'cod_barras.required' => 'Código de barras é obrigatório',
+            'icms.required' => 'ICMS é obrigatório',
+            'ipi.required' => 'IPI é obrigatório',
         ];
     }
 }
